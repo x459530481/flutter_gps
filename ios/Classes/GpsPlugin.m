@@ -56,7 +56,9 @@
 - (void)resultForValue:(id)obj {
     FlutterResult result = flutterResult;
     flutterResult = nil;
-    result(obj);
+    if(result != nil){
+        result(obj);
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {

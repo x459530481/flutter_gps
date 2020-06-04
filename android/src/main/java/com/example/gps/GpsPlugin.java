@@ -90,7 +90,9 @@ public class GpsPlugin implements MethodCallHandler, PluginRegistry.RequestPermi
     public void setResult(Object obj) {
         Result result = this.result;
         this.result = null;
-        result.success(obj);
+	if(result != null){
+          result.success(obj);
+	}
     }
 
     @Override
